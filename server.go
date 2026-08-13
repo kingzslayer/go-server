@@ -15,11 +15,11 @@ type Server struct {
 }
 
 type ServerConfig struct {
-	Addr            string
-	ReadTimeout     time.Duration
-	WriteTimeout    time.Duration
-	IdleTimeout     time.Duration
-	ShutdownTimeout time.Duration
+	Addr            string        `koanf:"addr"`
+	ReadTimeout     time.Duration `koanf:"read_timeout"`
+	WriteTimeout    time.Duration `koanf:"write_timeout"`
+	IdleTimeout     time.Duration `koanf:"idle_timeout"`
+	ShutdownTimeout time.Duration `koanf:"shutdown_timeout"`
 }
 
 func NewServer(cfg ServerConfig, handler http.Handler) *Server {
